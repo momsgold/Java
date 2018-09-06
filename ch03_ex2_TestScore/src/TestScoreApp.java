@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class TestScoreApp {
@@ -12,10 +13,13 @@ public class TestScoreApp {
         int scoreTotal = 0;
         int scoreCount = 0;
         int testScore = 0;
-        int minScore = 0;
-        int maxScore = 100;
+       
         @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
+        
+        // if you put min and max inside the while loop, the values will always be 0 and 100
+        int minScore = 100; // start with a high number for min
+        int maxScore = 0;	// start with a low number for max
 
         // get a series of test scores from the user
         while (testScore != 999)
@@ -27,8 +31,8 @@ public class TestScoreApp {
             // accumulate score count and score total
             if (testScore <= 100)
             {
-                scoreCount ++; // = scoreCount + 1;
-                scoreTotal += 1; // = scoreTotal + testScore;
+                scoreCount += 1; // = scoreCount + 1;
+                scoreTotal += testScore; // = scoreTotal + testScore;
                 maxScore = Math.max(maxScore, testScore);
                 minScore = Math.min(minScore, testScore);
             }
@@ -38,12 +42,16 @@ public class TestScoreApp {
 
         // display the score count, score total, and average score
         double averageScore = (double) scoreTotal / scoreCount;
+        NumberFormat avg = NumberFormat.getNumberInstance();
+        avg.setMaximumFractionDigits(1);
+        
         String message = "\n"
                 + "Score count:   " + scoreCount + "\n"
                 + "Score total:   " + scoreTotal + "\n"
-                + "Average score: " + averageScore + "\n"
+                + "Average score: " + avg.format(averageScore) + "\n"
                 + "Lowest score: "  + minScore + "\n"
                 + "Highest score: " + maxScore + "\n";
         System.out.println(message);
+        sc.close();
     }
 }
