@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Scanner;
 
@@ -42,15 +43,27 @@ public class TestScoreApp {
 
         // display the score count, score total, and average score
         double averageScore = (double) scoreTotal / scoreCount;
+        
+        // double averageScore = (double) Math.round((scoreTotal / scoreCount) * 10) / 10;
+       
         NumberFormat avg = NumberFormat.getNumberInstance();
-        avg.setMaximumFractionDigits(1);
+        avg.setMaximumFractionDigits(2);
+       
+        // BigDecimal st = new BigDecimal(scoreTotal);
+        // BigDecimal scc = new BigDecimal(scoreCount);       
+        // double averageScore = st.divide(scc).doubleValue();
+      
+        // BigDecimal st = new BigDecimal(scoreTotal);
+        // BigDecimal scc = new BigDecimal(scoreCount);  
+        // BigDecimal averageScoreBD = st.divide(scc).setScale(1, RoundingMode.HALF_UP);
+        // double averageScore = averageScoreBD.doubleValue();
         
         String message = "\n"
-                + "Score count:   " + scoreCount + "\n"
-                + "Score total:   " + scoreTotal + "\n"
+                + "Score count:   " + scoreCount   + "\n"
+                + "Score total:   " + scoreTotal   + "\n"
                 + "Average score: " + avg.format(averageScore) + "\n"
-                + "Lowest score: "  + minScore + "\n"
-                + "Highest score: " + maxScore + "\n";
+                + "Lowest score: "  + minScore     + "\n"
+                + "Highest score: " + maxScore     + "\n";
         System.out.println(message);
         sc.close();
     }
