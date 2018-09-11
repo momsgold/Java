@@ -9,7 +9,7 @@ public class DiceRollerApp {
 		String choice = "y";
 		
 		while (choice.equalsIgnoreCase("y")) {
-			System.out.print("Roll the die?  ");
+			System.out.print("Roll the dice?  ");
 			choice = sc.next();
 			
 			int die1 = rollDice();
