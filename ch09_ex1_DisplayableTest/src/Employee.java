@@ -1,4 +1,4 @@
-public class Employee {
+public class Employee implements DepartmentConstants, Displayable {
 
     private int department;
     private String firstName;
@@ -9,10 +9,20 @@ public class Employee {
         this.lastName = lastName;
         this.firstName = firstName;
     }
-    
 
     @Override
-    public String print() {
-        
+    public String toString() {
+        String text = "";
+        text += firstName + " " + lastName;
+        String dept = "";
+        if (department == ADMIN) {
+            dept = "Administration";
+        } else if (department == EDITORIAL) {
+            dept = "Editorial";
+        } else if (department == MARKETING) {
+            dept = "Marketing";
+        }
+        text += " (" + dept + ")";
+        return text;
     }
 }
