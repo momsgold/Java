@@ -22,10 +22,6 @@ public class MonthSelectorApp {
         while (choice.equalsIgnoreCase("y")) {
             // get the input from the user
             int monthNumber = Console.getInt("Enter month number: ");
-            
-//          String[] monthSales = new String [12];
-//          String[] monthSales = {"January", "February", "March", "April", "May", "June", "July", "August", "September",
-//            		"October", "November", "December"};
             }
             
             // validate input
@@ -47,6 +43,4 @@ public class MonthSelectorApp {
         
         
         Console.displayLine();
-    }    
-
-}
+    }
