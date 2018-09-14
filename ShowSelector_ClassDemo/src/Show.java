@@ -51,7 +51,10 @@ public class Show {
 		// toString
 		@Override
 		public String toString() {
-			return "name: " + name + ", genre: " + genre + ", length: " + length + ", network: " + network;
+			return "show: " + name + "\n"
+				 + "genre: " + genre + "\n"
+				 + "length: " + length + "\n"
+				 + "network: " + network;
 		}
 		
 }
