@@ -11,7 +11,12 @@ public class DiceRollerApp {
 			// prompt user for input
 			// create new instance of Grade class
 			RandomRoll die1 = new RandomRoll();
-			System.out.println(die1.getRoll());
+			RandomRoll die2 = new RandomRoll();
+			int total = die1 + die2;
+			String message = "Roll 1: " + die1.getRoll() + "\n"
+						   + "Roll 2: " + die2.getRoll() + "\n"
+						   + "Total:  " + total + "\n";
+			System.out.println(message);
 			choice = Console.getString("Would you like to roll the dice? ", "y", "n");						
 		}
 		
