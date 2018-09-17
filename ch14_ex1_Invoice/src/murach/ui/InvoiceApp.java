@@ -11,6 +11,7 @@ public class InvoiceApp {
 
     public static void main(String args[]) {
         System.out.println("Welcome to the Invoice application\n");
+//      System.out.println("Invoice date: " + invoice.getInvoiceDateFormatted());
         getLineItems();
         displayInvoice();
     }
@@ -33,6 +34,9 @@ public class InvoiceApp {
         StringBuilder sb = new StringBuilder();
         sb.append("Invoice date: ");
         sb.append(invoice.getInvoiceDateFormatted());        
+       
+        
+        System.out.println("Invoice due date: " + invoice.getDueDateFormatted());
         sb.append("\n\n");
         
         sb.append(StringUtil.pad("Description", 34));

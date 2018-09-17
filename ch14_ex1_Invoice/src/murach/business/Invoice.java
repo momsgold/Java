@@ -4,6 +4,7 @@ import java.text.NumberFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class Invoice {
@@ -48,8 +49,19 @@ public class Invoice {
     }
 
     public String getInvoiceDateFormatted() {
-        DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDate(
-                FormatStyle.SHORT);        
+        DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM);        
         return dtf.format(invoiceDate);
     }    
+    
+    public LocalDateTime getDueDate() {
+//    	LocalDateTime after30Days = getInvoiceDate().plus(30, ChronoUnit.DAYS);
+//    	return after30Days;
+    	LocalDateTime dueDate = invoiceDate.plusDays(30);
+        return dueDate;
+    }
+    
+    public String getDueDateFormatted() {
+    	DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM);
+    	return dtf.format(getDueDate());
+    }
 }
