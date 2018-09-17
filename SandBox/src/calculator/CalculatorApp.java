@@ -53,5 +53,14 @@ public class CalculatorApp {
 		// exit message
 		System.out.println("\nThank you for using the 'Calculator' application!");
 	}
+	
+	// try to make a result method
+//	public void result() {
+//		return if (operation.equalsIgnoreCase("a")) {
+//			c.add();
+//		} else {
+//			c.subtract();
+//		}
+//	}
 
 }
