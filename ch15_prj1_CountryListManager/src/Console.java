@@ -1,7 +1,6 @@
-
 import java.util.Scanner;
 
-public class Console2 {
+public class Console {
     
 	// create an instance of Scanner
     private static Scanner sc = new Scanner(System.in);

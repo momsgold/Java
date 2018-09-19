@@ -8,11 +8,17 @@ public class ch12_ArrayList {
 		textbooks.add("Separation Process Principles");
 		textbooks.add("Essentials of Chemical Reaction Engineering");
 		
+		// add additional
 		textbooks.add("Multivariable Calculus");
+		// remove last book
+		String book = textbooks.remove(3);
 		
+		System.out.println("_________Chemical Engineering Textbooks_________");
 		for (String s : textbooks) {
 			System.out.println(s);
 		}
+		System.out.println();
+		System.out.println("'" + book + "' was removed");
 		
 	}
 

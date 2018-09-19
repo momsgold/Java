@@ -4,14 +4,14 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.time.temporal.ChronoUnit;
 
-public class Reservation2 {
+public class Reservation {
 	// instance variables
 	public static final double PRICE_PER_NIGHT = 145.00;
 	private LocalDate arrivalDate;
 	private LocalDate departureDate;
 	
 	// constructor
-	public Reservation2(LocalDate arrivalDate, LocalDate departureDate) {
+	public Reservation(LocalDate arrivalDate, LocalDate departureDate) {
 		super();
 		this.arrivalDate = arrivalDate;
 		this.departureDate = departureDate;
@@ -55,8 +55,7 @@ public class Reservation2 {
 	
 	// format the PRICE_PER_NIGHT constant
 	public String getPricePerNightFormatted() {
-		NumberFormat currency = NumberFormat.getCurrencyInstance();
-		return currency.format(PRICE_PER_NIGHT);
+		return formatPrice(PRICE_PER_NIGHT);
 	}
 	
 	// calculate the total price of the stay
@@ -67,12 +66,14 @@ public class Reservation2 {
 	
 	// format the total price for the stay
 	public String getTotalPriceFormatted() {
-		NumberFormat currency = NumberFormat.getCurrencyInstance();
-		return currency.format(getTotalPrice());
+		return formatPrice(getTotalPrice());
 	}
 	
-//	public double formatPrice(double price) {
-//		NumberFormat currency = NumberFormat.getCurrencyInstance();
-//		return Double.parseDouble(currency.format(price));
-//	}
+	/*
+	 * Sean... I wrote this method so I wouldn't have to do the price formatting twice.
+	 */
+	public String formatPrice(double price) {
+		NumberFormat currency = NumberFormat.getCurrencyInstance();
+		return currency.format(price);
+	}
 }

@@ -1,9 +1,6 @@
 import java.time.LocalDate;
 
-import Attempt1.Console;
-import Attempt1.Reservation;
-
-public class ReservationCalculatorApp2 {
+public class ReservationCalculatorApp {
 
 	public static void main(String[] args) {
 		// welcome message
@@ -30,13 +27,13 @@ public class ReservationCalculatorApp2 {
 			
 			String message = "Arrival date: "   + reservation.getArrivalDateFormatted()   + "\n"
 						   + "Departure date: " + reservation.getDepartureDateFormatted() + "\n"
-						   + "Price: "			+ reservation.getPricePerNightFormatted() + "\n"
+						   + "Price per night: "+ reservation.getPricePerNightFormatted() + "\n"
 						   + "Total price: "	+ reservation.getTotalPriceFormatted()    + " for " 
 						   						+ reservation.getNumberOfNights()         + " of nights" + "\n";
 			System.out.println(message);
 			
 			// prompt user to continue (part 2)
-			choice = Console2.getString("Would you like to enter another reservation? ('y'/'n')  ");
+			choice = Console.getString("Would you like to enter another reservation? ('y'/'n')  ");
 		}
 		
 		// exit message
