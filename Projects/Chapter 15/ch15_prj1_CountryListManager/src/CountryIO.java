@@ -79,12 +79,23 @@ public class CountryIO {
 	}
 	
 	public boolean add(Country country) {
-//		if (countries == null) {
-//			countries = new ArrayList<>();// create empty array list
-//		}
-		
 		countries.add(country);
 		return saveAll();
+	}
+	
+	public boolean remove(Country country) {
+		countries.remove(country);
+		return saveAll();
+	}
+	
+	public Country get(int id) {
+		Country c = null;
+		for (Country cnt: countries) {
+			if (cnt.getId() == id) {
+				c = cnt;
+			}
+		}
+		return c;
 	}
 	
 }

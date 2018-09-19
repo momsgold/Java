@@ -22,7 +22,7 @@ public class CountriesApp {
 						System.out.println("Countries file doesn't exist. Please add a country.");
 					} else {
 						for (Country c : countries) {
-							System.out.println(c);
+							System.out.println(c.toFormattedDisplay());
 						}
 						System.out.println();	
 					}
@@ -41,7 +41,18 @@ public class CountriesApp {
 					}
 					System.out.println();
 					
-				} else if (!command.equals("3")) {
+				} else if (command.equals("3")){
+					// remove country
+					int id = Console.getInt("Enter ountry ID to remove:  ");
+					Country c = cio.get(id); // c is the instance of Country
+					if (cio.remove(c)) {
+						System.out.println(c.getCode() + " was successfully removed!");
+					} else {
+						System.out.println("An error has occurred");
+					}
+					System.out.println();
+					
+				} else if (!command.equals("4")) {
 					// invalid command if it isn't 1-3
 					System.out.println("Invalid command! Please try again.");
 				}
@@ -56,10 +67,11 @@ public class CountriesApp {
 	}
 	
 	private static void displayCommandMenu() {
-		System.out.println("COMMAND MENU\n" 	  + 
-						   "1 - List countries\n" + 
-						   "2 - Add a country\n"  + 
-						   "3 - Exit");
+		System.out.println("COMMAND MENU\n" 	    +  
+						   "1 - List countries\n"   + 
+						   "2 - Add a country\n"    + 
+						   "3 - Remove a country\n" +
+						   "4 - Exit");
 	}
 
 }

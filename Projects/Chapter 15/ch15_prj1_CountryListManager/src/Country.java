@@ -40,4 +40,8 @@ public class Country {
 		return "Country [id: " + id + ", code: " + code + ", name: " + name + "]";
 	}
 	
+	public String toFormattedDisplay() {
+		return id + "\t" + code + "\t" + name;
+	}
+	
 }
