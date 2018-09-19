@@ -33,6 +33,8 @@ public class ch11_Arrays {
 								 {"2", "Separation Process Principles"}, 
 								 {"3", "Essentials of Chemical Reaction Engineering"}
 								};
+		
+		System.out.println("\n__________CHEMICAL ENGINEERING TEXTBOOKS__________");
 		for (int i = 0; i < textbooks2.length; i++) {
 			for (int j = 0; j < textbooks2[i].length; j++) {
 				System.out.println(textbooks2[i][j]);

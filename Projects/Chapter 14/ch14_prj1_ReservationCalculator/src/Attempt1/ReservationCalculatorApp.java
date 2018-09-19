@@ -1,3 +1,4 @@
+package Attempt1;
 import java.time.LocalDate;
 
 public class ReservationCalculatorApp {
@@ -22,8 +23,9 @@ public class ReservationCalculatorApp {
 			LocalDate arrivalDate = LocalDate.of(arrivalYear, arrivalMonth, arrivalDay);
 			LocalDate departureDate = LocalDate.of(departureYear, departureMonth, departureDay);
 			
+			// WHAT DOES THIS DO?!?!?!?!?!?
 			Reservation reservation = new Reservation(arrivalDate, departureDate);
-			//String message = arrivalDate + ", " + departureDate;
+
 			String message = "Arrival date: " + arrivalDate + "\n"
 						   + "Departure date: " + departureDate + "\n";
 			System.out.println(message);
