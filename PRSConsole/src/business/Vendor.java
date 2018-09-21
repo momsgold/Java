@@ -1,6 +1,6 @@
 package business;
 
-public class vendor {
+public class Vendor {
 	private int ID;
 	private String code;
 	private String name;
@@ -16,7 +16,7 @@ public class vendor {
 	private String dateUpdated;
 	private boolean updatedByUser;
 	
-	public vendor(int iD, String code, String name, String address, String city, String state, int zip,
+	public Vendor(int iD, String code, String name, String address, String city, String state, int zip,
 			String phoneNumber, String email, boolean isPreApproved, boolean isActive, String dateCreated,
 			String dateUpdated, boolean updatedByUser) {
 		super();

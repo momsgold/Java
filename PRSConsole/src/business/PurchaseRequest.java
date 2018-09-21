@@ -1,6 +1,6 @@
 package business;
 
-public class purchaserequest {
+public class PurchaseRequest {
 	private int ID;
 	private int userID;
 	private String description;
@@ -16,7 +16,7 @@ public class purchaserequest {
 	private String dateupdated;
 	private boolean updatedByUser;
 	
-	public purchaserequest(int iD, int userID, String description, String justification, String dateNeeded,
+	public PurchaseRequest(int iD, int userID, String description, String justification, String dateNeeded,
 			String deliveryMode, String status, double total, String submittedDate, String reasonForRejection,
 			boolean isActive, String dateCreated, String dateupdated, boolean updatedByUser) {
 		super();

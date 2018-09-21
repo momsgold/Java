@@ -1,6 +1,6 @@
 package business;
 
-public class purchaserequestlineitem {
+public class PurchaseRequestLineItem {
 	private int ID;
 	private int purchaseRequestID;
 	private int productID;
@@ -10,7 +10,7 @@ public class purchaserequestlineitem {
 	private String dateUpdated;
 	private boolean updatedByUser;
 	
-	public purchaserequestlineitem(int iD, int purchaseRequestID, int productID, int quantity, boolean isActive,
+	public PurchaseRequestLineItem(int iD, int purchaseRequestID, int productID, int quantity, boolean isActive,
 			String dateCreated, String dateUpdated, boolean updatedByUser) {
 		super();
 		ID = iD;

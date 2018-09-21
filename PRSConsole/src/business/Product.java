@@ -1,6 +1,6 @@
 package business;
 	
-public class product {
+public class Product {
 	private int ID;
 	private int vedorID;
 	private String partNumber;
@@ -13,7 +13,7 @@ public class product {
 	private String dateUpdated;
 	private boolean updatedByUser;
 	
-	public product(int iD, int vedorID, String partNumber, String name, double price, String unit, String photoPath,
+	public Product(int iD, int vedorID, String partNumber, String name, double price, String unit, String photoPath,
 			boolean isActive, String dateCreated, String dateUpdated, boolean updatedByUser) {
 		super();
 		ID = iD;

@@ -1,6 +1,6 @@
 package business;
 
-public class user {
+public class User {
 	// instance variables
 	private int ID;
 	private String userName;
@@ -13,7 +13,7 @@ public class user {
 	private boolean isAdmin;
 	
 	// constructor
-	public user(int iD, String userName, String password, String firstName, String lastName, String phoneNumber,
+	public User(int iD, String userName, String password, String firstName, String lastName, String phoneNumber,
 			String email, boolean isReviewer, boolean isAdmin) {
 		super();
 		ID = iD;
