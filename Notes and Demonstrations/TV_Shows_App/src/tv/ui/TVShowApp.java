@@ -41,13 +41,23 @@ public class TVShowApp {
 				for (Show s : shows) {
 					System.out.println(s);
 				}
-			} else if (!command.equals("3")) {
+			} else if (command.equalsIgnoreCase("3")) {
+				System.out.println("Add name, rating, lenght, genre, network:  ");
+				String addName = Console.getString("Add a show namne: ");
+				String addRating = Console.getString("Add a show rating:  ");
+				int addLength = Console.getInt("Add a show length:  ");
+				String addGenre = Console.getString("Add a show genre:  ");
+				String addNetwork = Console.getString("Add a show network: ");
+				Show tv = new Show(addName, addRating, addLength, addGenre, addNetwork);
+				showDB.add(tv);
+				
+			} else if (!command.equals("4")) {
 				System.out.println("Invalid command. Try again.");
 			}
 		}
 		
 
-		System.out.println("That's enough TV for you.");
+		System.out.println("\nThat's enough TV for you.");
 	}
 	
 	private static void displayMenu() {
@@ -55,7 +65,8 @@ public class TVShowApp {
 		sb.append("\n___COMMAND MENU___\n");
 		sb.append("1 - List TV shows\n");
 		sb.append("2 - List TV shows by genre or length\n");
-		sb.append("3 - Exit");
+		sb.append("3 - Add a TV show\n");
+		sb.append("4 - Exit");
 		System.out.println(sb);
 	}
 

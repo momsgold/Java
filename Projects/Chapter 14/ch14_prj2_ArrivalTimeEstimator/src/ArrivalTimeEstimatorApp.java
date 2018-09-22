@@ -36,6 +36,7 @@ public class ArrivalTimeEstimatorApp {
 		System.out.println("\nBye, Q!");
 	}
 	
+	// get the date into the date format
 	public static LocalDate getDate(String date) {
 		int index1 = date.indexOf("-");
 		int index2 = date.indexOf("-", index1 + 1);
@@ -52,6 +53,7 @@ public class ArrivalTimeEstimatorApp {
 		return departure;
 	}
 	
+	// get the time into the time format
 	public static LocalTime getTime(String time) {
 		int index1 = time.indexOf(":");
 		
@@ -66,6 +68,7 @@ public class ArrivalTimeEstimatorApp {
 		return departure;
 	}
 	
+	// add days to the departure date
 	public static LocalDate addDate(LocalDate date, int hours) {
 		int days = 0;
 		for (int i = 1; i > 0; i++) {
@@ -80,17 +83,21 @@ public class ArrivalTimeEstimatorApp {
 		return newHours;
 	}
 	
+	// get the final time
 	public static LocalTime addTime(LocalTime time, int hours, int minutes) {
 		LocalTime newHours = time.plusHours(hours);
 		LocalTime newTime = newHours.plusMinutes(minutes);
 		return newTime;
 	}
 	
+	// format the date
+	// I know I probably could have done this formatting stuff in addTime and addDate, but I wanted more practice writing methods
 	public static String formatDate(LocalDate date) {
 		DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM);
 		return dtf.format(date);
 	}
 	
+	// format the time
 	public static String formatTime(LocalTime time) {
 		DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT);
 		return dtf.format(time);

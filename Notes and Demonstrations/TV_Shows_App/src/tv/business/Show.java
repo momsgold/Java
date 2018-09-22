@@ -18,6 +18,15 @@ public class Show {
 		this.network = network;
 	}
 
+	public Show(String name, String rating, int length, String genre, String network) {
+		super();
+		this.name = name;
+		this.rating = rating;
+		this.length = length;
+		this.genre = genre;
+		this.network = network;
+	}
+
 	public int getId() {
 		return id;
 	}
