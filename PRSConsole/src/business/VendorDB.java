@@ -1,4 +1,4 @@
-package database;
+package business;
 
 public class VendorDB {
 

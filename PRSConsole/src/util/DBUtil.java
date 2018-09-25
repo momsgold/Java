@@ -1,3 +1,4 @@
+package util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,8 +14,8 @@ public class DBUtil {
 
     public static Connection getConnection() throws SQLException {
         // define connection parameters    
-    	String url = "jdbc:mysql://localhost:3306/prs?autoReconnect=true&useSSL=false"; // gets rid of error
-        String username = "prs_user_user";
+    	String url = "jdbc:mysql://localhost:3306/prs?allowPublicKeyRetrieval=true&useSSL=false"; // gets rid of error
+        String username = "prs_user";
         String password = "sesame";
 
         //get and return connection

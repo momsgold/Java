@@ -2,34 +2,51 @@ package business;
 	
 public class Product {
 	private int ID;
-	private int vedorID;
+	private int vendorID;
 	private String partNumber;
 	private String name;
 	private double price;
 	private String unit;
 	private String photoPath;
-	private boolean isActive;
-	private String dateCreated;
-	private String dateUpdated;
-	private boolean updatedByUser;
 	
-	public Product(int iD, int vedorID, String partNumber, String name, double price, String unit, String photoPath,
-			boolean isActive, String dateCreated, String dateUpdated, boolean updatedByUser) {
+	public Product(int iD, int vendorID, String partNumber, String name, double price, String unit, String photoPath) {
 		super();
 		ID = iD;
-		this.vedorID = vedorID;
+		this.vendorID = vendorID;
 		this.partNumber = partNumber;
 		this.name = name;
 		this.price = price;
 		this.unit = unit;
 		this.photoPath = photoPath;
-		this.isActive = isActive;
-		this.dateCreated = dateCreated;
-		this.dateUpdated = dateUpdated;
-		this.updatedByUser = updatedByUser;
+	}
+			
+	public Product(int vendorID, String partNumber, String name, double price, String unit, String photoPath) {
+		super();
+		this.vendorID = vendorID;
+		this.partNumber = partNumber;
+		this.name = name;
+		this.price = price;
+		this.unit = unit;
+		this.photoPath = photoPath;
 	}
 
-	
+	// GET CONSTRUCTOR
+	public Product(int vendorID, String partNumber, String name, double price) {
+		super();
+		this.vendorID = vendorID;
+		this.partNumber = partNumber;
+		this.name = name;
+		this.price = price;
+	}
+
+
+	public Product(String name) {
+		super();
+		this.name = name;
+	}
+
+
+
 	public int getID() {
 		return ID;
 	}
@@ -38,12 +55,12 @@ public class Product {
 		ID = iD;
 	}
 
-	public int getVedorID() {
-		return vedorID;
+	public int getVendorID() {
+		return vendorID;
 	}
 
-	public void setVedorID(int vedorID) {
-		this.vedorID = vedorID;
+	public void setVendorID(int vendorID) {
+		this.vendorID = vendorID;
 	}
 
 	public String getPartNumber() {
@@ -86,36 +103,15 @@ public class Product {
 		this.photoPath = photoPath;
 	}
 
-	public boolean isActive() {
-		return isActive;
+
+	@Override
+	public String toString() {
+//		return "Product [ID=" + ID + ", vendorID=" + vendorID + ", partNumber=" + partNumber + ", name=" + name
+//				+ ", price=" + price + ", unit=" + unit + ", photoPath=" + photoPath + "]";
+		return "ID: " + ID + "\t" 
+			 + "Vendor ID: " + vendorID + "\t"
+			 + partNumber + "\t" + name + "\t" + price + "\t" + unit + "\t" + photoPath; 
 	}
 
-	public void setActive(boolean isActive) {
-		this.isActive = isActive;
-	}
-
-	public String getDateCreated() {
-		return dateCreated;
-	}
-
-	public void setDateCreated(String dateCreated) {
-		this.dateCreated = dateCreated;
-	}
-
-	public String getDateUpdated() {
-		return dateUpdated;
-	}
-
-	public void setDateUpdated(String dateUpdated) {
-		this.dateUpdated = dateUpdated;
-	}
-
-	public boolean isUpdatedByUser() {
-		return updatedByUser;
-	}
-
-	public void setUpdatedByUser(boolean updatedByUser) {
-		this.updatedByUser = updatedByUser;
-	}
 	
 }

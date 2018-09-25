@@ -42,7 +42,7 @@ public class TVShowApp {
 					System.out.println(s);
 				}
 			} else if (command.equalsIgnoreCase("3")) {
-				System.out.println("Add name, rating, lenght, genre, network:  ");
+				System.out.println("Add name, rating, length, genre, network:  ");
 				String addName = Console.getString("Add a show namne: ");
 				String addRating = Console.getString("Add a show rating:  ");
 				int addLength = Console.getInt("Add a show length:  ");
