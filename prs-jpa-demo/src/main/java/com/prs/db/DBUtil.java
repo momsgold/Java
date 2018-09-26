@@ -1,4 +1,4 @@
-package com.test.jpademo.db;
+package com.prs.db;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

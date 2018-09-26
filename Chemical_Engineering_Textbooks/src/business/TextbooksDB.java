@@ -53,6 +53,28 @@ public class TextbooksDB {
             return null;
         }
     }
+ 
+    
+    public Textbooks getid(int ID) {
+        String sql = "SELECT ID FROM books ";
+        try (Connection connection = DBUtil.getConnection();
+             PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setInt(1, ID);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                 Textbooks t = getTextbookFromResultSet(rs); // replaces code that was here (what is in gPFRS)
+                rs.close();
+                return t;
+            } else {
+                rs.close();
+                return null;
+            }
+        } catch (SQLException e) {
+            System.err.println(e);
+            return null;
+        }
+    }
+    
     
     public boolean add(Textbooks t) {
         String sql = "INSERT INTO books (Title, Author) "

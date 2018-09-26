@@ -1,5 +1,3 @@
-package com.prs.util;
-
 import java.util.Scanner;
 
 public class Console {

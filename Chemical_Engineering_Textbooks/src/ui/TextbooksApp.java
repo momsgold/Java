@@ -48,8 +48,14 @@ public class TextbooksApp {
 		
 			// UPDATE A PRODUCT
 			else if (command.equals("4")) {
+				
+				int listLength = tdb.getAll().size();
+				System.out.println(tdb.getid(1));
+//				System.out.println(listLength + ", " + tdb.getAll().get(listLength - 1));
+				
 				int textbookid = Console.getInt("Enter textbook ID:  ");
-				Textbooks textbooks = getTextbookByID(tdb, textbookid);
+				Textbooks textbooks = getTextbookByID(tdb, textbookid);	
+				
 				
 				String newtitle = Console.getString("Enter new title:  ");
 				textbooks.setTitle(newtitle);
@@ -77,17 +83,17 @@ public class TextbooksApp {
 				
  		}
 		
-		System.out.println("Thank you for using the 'Chemical Engineering Textbooks' application!");
+		System.out.println("\nThank you for using the 'Chemical Engineering Textbooks' application!");
 	}
 	
 	private static void displayMenu() {
-		StringBuilder sb = new StringBuilder("\nCOMMAND MENU:\n");
+		StringBuilder sb = new StringBuilder("\n_____COMMAND MENU_____\n");
 		sb.append("1 - List all textbooks\n");
 		sb.append("2 - Get a textbook\n");
 		sb.append("3 - Add a textbook\n");
 		sb.append("4 - Update a textbook\n");
 		sb.append("5 - Remove a textbook\n");
-		sb.append("6 - Leave and never come back\n");
+		sb.append("6 - Exit the application\n");
 		System.out.println(sb.toString());
 	}
 	

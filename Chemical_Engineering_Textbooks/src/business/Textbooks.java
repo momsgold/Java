@@ -51,10 +51,6 @@ public class Textbooks {
 //	}
 	@Override
 	public String toString() {
-//		StringBuilder message = new StringBuilder();
-//		message.append(ID);
-//		message.append(pad(title, 10));
-//		message.append(pad(author, 5));
 		String message = ID + "\t" + pad(title, 60) + pad(author, 25);
 		return message;
 	}

@@ -1,7 +1,14 @@
 package com.prs.business;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity // Entity annotation
 public class User {
-	// instance variables
+	@Id //Id annotation
+	@GeneratedValue (strategy = GenerationType.IDENTITY) //IDENTITY is a constant inside GenerationType
 	private int ID;
 	private String userName;
 	private String password;
@@ -12,6 +19,10 @@ public class User {
 	private boolean isReviewer;
 	private boolean isAdmin;
 	
+	public User() {
+		super();
+	}
+
 	// constructor
 	public User(int iD, String userName, String password, String firstName, String lastName, String phoneNumber,
 			String email, boolean isReviewer, boolean isAdmin) {
@@ -23,7 +34,9 @@ public class User {
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
+		//@Column (name = "isReviewer")
 		this.isReviewer = isReviewer;
+		//@Column (name = "isAdmin")
 		this.isAdmin = isAdmin;
 	}
 
