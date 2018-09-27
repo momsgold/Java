@@ -55,24 +55,21 @@ public class TextbooksDB {
     }
  
     
-    public Textbooks getid(int ID) {
+    public List<Integer> getIdNumbers() {
         String sql = "SELECT ID FROM books ";
+        List<Integer> ids = new ArrayList<>();
         try (Connection connection = DBUtil.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
-            ps.setInt(1, ID);
             ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                 Textbooks t = getTextbookFromResultSet(rs); // replaces code that was here (what is in gPFRS)
-                rs.close();
-                return t;
-            } else {
-                rs.close();
-                return null;
+            while (rs.next()) {
+                 int i = rs.getInt(1); // replaces code that was here (what is in gPFRS)
+                ids.add(new Integer(i));
             }
         } catch (SQLException e) {
             System.err.println(e);
             return null;
         }
+        return ids;
     }
     
     

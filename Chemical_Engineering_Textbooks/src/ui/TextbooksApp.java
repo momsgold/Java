@@ -18,6 +18,7 @@ public class TextbooksApp {
 		while (!command.equals("6")) {
 			displayMenu();
 			command = Console.getString("Enter a command ");
+			System.out.println();
 			
 			// LIST ALL PRODUCTS
 			if (command.equals("1")) {
@@ -47,19 +48,26 @@ public class TextbooksApp {
 			}
 		
 			// UPDATE A PRODUCT
-			else if (command.equals("4")) {
-				
-				int listLength = tdb.getAll().size();
-				System.out.println(tdb.getid(1));
-//				System.out.println(listLength + ", " + tdb.getAll().get(listLength - 1));
-				
+			else if (command.equals("4")) {			
 				int textbookid = Console.getInt("Enter textbook ID:  ");
 				Textbooks textbooks = getTextbookByID(tdb, textbookid);	
 				
+				List<Integer> ids = tdb.getIdNumbers();
+				String newtitle = "";
+				String newauthor = "";
+				if (ids.contains(textbookid)) {
+				newtitle = Console.getString("Enter new title:  ");
+				newauthor = Console.getString("Enter new author:  ");
 				
-				String newtitle = Console.getString("Enter new title:  ");
+				} else {
+					textbookid =Console.getInt("Enter a valid textbook ID:  ");
+					textbooks = getTextbookByID(tdb, textbookid);
+					newtitle = Console.getString("Enter a new title:  ");
+					
+					newauthor = Console.getString("Enter new author:  ");
+				}
+				
 				textbooks.setTitle(newtitle);
-				String newauthor = Console.getString("Enter new author:  ");
 				textbooks.setAuthor(newauthor);
 				
 				if (tdb.update(textbooks)) {
@@ -71,14 +79,23 @@ public class TextbooksApp {
 			
 			// DELETE A PRODUCT
 			else if (command.equals("5")) {
+				List<Integer> ids = tdb.getIdNumbers();
+				
 				int textbookid = Console.getInt("Enter textbook ID:  ");
 				Textbooks textbooks = getTextbookByID(tdb, textbookid);
 				
-				if (tdb.delete(textbooks)) {
-					System.out.println("Textbook deleted successfully");
+				if (ids.contains(textbookid)) {
+					if (tdb.delete(textbooks)) {
+						System.out.println("Textbook deleted successfully");
+					} else {
+						System.out.println("Error deleting textbook.");
+					}
 				} else {
-					System.out.println("Error deleting textbook.");
+					System.out.println("Enter a valid ID!");
+					textbookid = Console.getInt("Enter textbook ID:  ");
+					textbooks = getTextbookByID(tdb, textbookid);
 				}
+				
 			}
 				
  		}
