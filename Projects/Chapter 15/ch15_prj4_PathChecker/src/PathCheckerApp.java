@@ -20,7 +20,8 @@ public class PathCheckerApp {
 					System.out.println("\nThe path points to a directory");
 				}
 			} else {
-				System.out.println("\nThis file is clearly not a thing...");
+				System.out.println("\nThis"
+						+ " file is clearly not a thing...");
 			}
 		
 			choice = Console.getString("\nWould you like to continue?  ", "y", "n");

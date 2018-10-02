@@ -11,7 +11,7 @@ import util.DBUtil;
 
 public class TextbooksDB {
     public List<Textbooks> getAll() {
-        String sql = "SELECT * FROM books ORDER BY ID ASC";
+        String sql = "SELECT * FROM Books ORDER BY ID ASC";
         List<Textbooks> textbooks = new ArrayList<>();
         try (Connection connection = DBUtil.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql);
@@ -34,7 +34,7 @@ public class TextbooksDB {
     
     public Textbooks get(String title) {
         String sql = "SELECT ID, Title "
-                   + "FROM books "
+                   + "FROM Books "
                    + "WHERE Title = ?";
         try (Connection connection = DBUtil.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
@@ -56,7 +56,7 @@ public class TextbooksDB {
  
     
     public List<Integer> getIdNumbers() {
-        String sql = "SELECT ID FROM books ";
+        String sql = "SELECT ID FROM Books ";
         List<Integer> ids = new ArrayList<>();
         try (Connection connection = DBUtil.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
@@ -74,7 +74,7 @@ public class TextbooksDB {
     
     
     public boolean add(Textbooks t) {
-        String sql = "INSERT INTO books (Title, Author) "
+        String sql = "INSERT INTO Books (Title, Author) "
                    + "VALUES (?, ?)";
         try (Connection connection = DBUtil.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
@@ -89,7 +89,7 @@ public class TextbooksDB {
     }
     
     public boolean update(Textbooks t) {
-        String sql = "UPDATE books SET Title = ?, Author = ? WHERE ID = ?";//"UPDATE books SET Title = ? WHERE ID = ?";
+        String sql = "UPDATE Books SET Title = ?, Author = ? WHERE ID = ?";//"UPDATE books SET Title = ? WHERE ID = ?";
         try (Connection connection = DBUtil.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
         	ps.setString(1, t.getTitle());
@@ -104,7 +104,7 @@ public class TextbooksDB {
     }
     
     public boolean delete(Textbooks t) {
-        String sql = "DELETE FROM books WHERE ID = ?";
+        String sql = "DELETE FROM Books WHERE ID = ?";
         try (Connection connection = DBUtil.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setInt(1, t.getID());
@@ -127,7 +127,7 @@ public class TextbooksDB {
    }
     
     public Textbooks getTextbooks(int tid) {
-  	  String sql = "SELECT * FROM books WHERE ID = ?";
+  	  String sql = "SELECT * FROM Books WHERE ID = ?";
   	  Textbooks textbooks = null;
         try (Connection connection = DBUtil.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql);) {
