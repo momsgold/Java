@@ -38,8 +38,19 @@ public class StreamsDemoApp {
 		people.add(p2);
 		people.add(p3);
 		
-		System.out.println("\nPeople via stream, print just the names");
+		System.out.println("\nPeople via OG 'for' loop. Print out toString()");
+		for (int i = 0; i < people.size(); i++) {
+			System.out.println(people.get(i));
+			// Person p = people.get(i);
+			// System.out.println(p);
+		}
 		
+		System.out.println("\nPeople via stream, toString()");
+		people.stream().forEach(System.out::println);
+		
+		System.out.println("\nPeople via stream, print just the names");
+		people.stream().forEach(peeps -> System.out.println(peeps.getName()));
+		// for each peep in the stream of people. print out the name
 		
 	}
 
